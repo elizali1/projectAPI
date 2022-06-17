@@ -23,14 +23,13 @@ router.post('/', [
         if (!user){
             return res.json('User not found!')
         }
-        //compare password to hashed password
         const isMatch = await bcrypt.compare(userData.password, user.password)
 
         if (!isMatch){
             return res.json('Password is not a match!')
         }
         res.status(200).json('Success!')
-        //create New JWT Token
+
         const payload = {
             id: user._id,
             email: user.email
