@@ -13,7 +13,7 @@ router.get('/', authMiddleware, async (req,res) => {
     }
 })
 //error in the lines below
-router.post('/', authMiddleware, async (req,res) => {
+router.post('/', async (req,res) => {
     const blogData = req.body 
     console.log(blogData)
 
