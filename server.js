@@ -21,7 +21,7 @@ app.use('/users', usersRouter)
 app.use('/auth', authRouter)
 
 app.get('/', (req,res) => {
-    res.status(200).json({message: 'How are you feeling today?'})
+    res.status(200).json({message: 'What is on your mind?'})
 })
 
 app.listen(PORT, () => {
