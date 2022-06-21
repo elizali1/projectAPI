@@ -22,7 +22,7 @@ router.post('/', async (req,res) => {
 
     } catch (error) {
         console.error(error)
-        res.status(400).json('ERROR-Try again!!')
+        res.status(400).json('ERROR-Wrong :(!!')
         
     }
 })
