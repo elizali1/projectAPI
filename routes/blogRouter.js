@@ -17,8 +17,8 @@ router.post('/', async (req,res) => {
     const blogData = req.body 
 
     try {
-        const blog = await blogModel.create(blogData)
-        res.status(201).json(blog)
+        const blogs = await blogModel.create(blogData)
+        res.status(201).json(blogs)
 
     } catch (error) {
         console.error(error)
@@ -31,8 +31,8 @@ router.get('/:id', async (req,res) => {
     const id = req.params.id
 
     try {
-        const blog = await blogModel.findById(id)
-        res.status(200).json(blog)
+        const blogs = await blogModel.findById(id)
+        res.status(200).json(blogs)
     } catch (error) {
         
     }
@@ -42,8 +42,8 @@ router.put('/:id', async (req,res) => {
     const id = req.params.id
     const newBlogData = req.body
     try {
-        const blog = await blogModel.findByIdAndUpdate(id, newBlogData, {new:true})
-        res.status(200).json(blog)
+        const blogs = await blogModel.findByIdAndUpdate(id, newBlogData, {new:true})
+        res.status(200).json(blogs)
     } catch (error) {
         
     }
@@ -52,7 +52,7 @@ router.put('/:id', async (req,res) => {
 router.delete('/:id', async (req,res) => {
     const id = req.params.id
     try {
-        const blog = await blogModel.findByIdAndDelete(id)
+        const blogs = await blogModel.findByIdAndDelete(id)
         res.status(200).json({msg: 'Blog post was deleted!'})
     } catch (error) {
         console.log(error)
