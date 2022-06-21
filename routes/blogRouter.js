@@ -6,7 +6,7 @@ const router = express.Router()
 router.get('/', authMiddleware, async (req,res) => {
     try {
         const blogs = await blogModel.find()
-        res.send(200).json(blogs)
+        res.sendStatus(200).json(blogs)
     } catch (error) {
         console.log(error)
         
